@@ -6,7 +6,7 @@ pipeline {
         CREDENTIALS = 'artifactory-creds'                // Jenkins credentials ID
         ARTIFACTORY_LOCAL_RELEASE_REPO = 'libs-release-local'
         ARTIFACTORY_VIRTUAL_RELEASE_REPO = 'libs-release' // or a virtual repo if defined
-        GRADLE_TOOL = 'gradle' // Must match tool name in Jenkins global tools
+        GRADLE_TOOL = 'GRADLE' // Must match tool name in Jenkins global tools
     }
 
     stages {
