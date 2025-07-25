@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'linux' }
 
     environment {
         SERVER_URL = 'http://localhost:9083/artifactory' // Local Artifactory URL
