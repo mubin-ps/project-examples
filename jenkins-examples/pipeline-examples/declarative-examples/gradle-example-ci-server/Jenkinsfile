@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    environment {
+        SERVER_URL = 'http://localhost:9083/artifactory' // Local Artifactory URL
+        CREDENTIALS = 'artifactory-creds'                // Jenkins credentials ID
+        ARTIFACTORY_LOCAL_RELEASE_REPO = 'libs-release-local'
+        ARTIFACTORY_VIRTUAL_RELEASE_REPO = 'libs-release' // or a virtual repo if defined
+        GRADLE_TOOL = 'gradle' // Must match tool name in Jenkins global tools
+    }
+
     stages {
         stage ('Clone') {
             steps {
@@ -19,7 +27,7 @@ pipeline {
                 rtGradleDeployer (
                     id: "GRADLE_DEPLOYER",
                     serverId: "ARTIFACTORY_SERVER",
-                    repo: ARTIFACTORY_LOCAL_RELEASE_REPO,
+                    repo: ARTIFACTORY_LOCAL_RELEASE_REPO
                 )
 
                 rtGradleResolver (
@@ -33,7 +41,7 @@ pipeline {
         stage ('Exec Gradle') {
             steps {
                 rtGradleRun (
-                    tool: GRADLE_TOOL, // Tool name from Jenkins configuration
+                    tool: GRADLE_TOOL,
                     rootDir: "gradle-examples/gradle-example-ci-server/",
                     tasks: 'clean artifactoryPublish',
                     deployerId: "GRADLE_DEPLOYER",
