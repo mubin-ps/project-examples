@@ -5,6 +5,8 @@ pipeline {
     SERVER_URL = 'http://localhost:9083'
     CREDENTIALS = 'artifactory-creds'
     ARTIFACTORY_LOCAL_RELEASE_REPO = 'libs-release-local'
+    ARTIFACTORY_LOCAL_SNAPSHOT_REPO = 'libs-snapshot-local'
+
   }
     stages {
         stage ('Clone') {
