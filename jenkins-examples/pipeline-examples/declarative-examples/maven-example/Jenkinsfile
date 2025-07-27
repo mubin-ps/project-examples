@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+    environment {
+    SERVER_URL = 'http://localhost:9083'
+    CREDENTIALS = 'artifactory-creds'
+  }
     stages {
         stage ('Clone') {
             steps {
