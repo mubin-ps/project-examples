@@ -7,7 +7,7 @@ pipeline {
     ARTIFACTORY_LOCAL_RELEASE_REPO = 'maven-releases'
     ARTIFACTORY_LOCAL_SNAPSHOT_REPO = 'maven-snapshots'
     ARTIFACTORY_VIRTUAL_RELEASE_REPO = 'maven-public'
-    ARTIFACTORY_VIRTUAL_SNAPSHOT_REPO = 'maven-snapshots'
+    ARTIFACTORY_VIRTUAL_SNAPSHOT_REPO = 'maven-public'
 
     MAVEN_TOOL = 'MAVEN_TOOL'
   }
