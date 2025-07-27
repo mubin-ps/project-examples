@@ -4,10 +4,11 @@ pipeline {
     environment {
     SERVER_URL = 'http://localhost:9083'
     CREDENTIALS = 'artifactory-creds'
-    ARTIFACTORY_LOCAL_RELEASE_REPO = 'libs-release-local'
-    ARTIFACTORY_LOCAL_SNAPSHOT_REPO = 'libs-snapshot-local'
-    ARTIFACTORY_VIRTUAL_RELEASE_REPO = 'libs-release'
-    ARTIFACTORY_VIRTUAL_SNAPSHOT_REPO = 'libs-snapshot'
+    ARTIFACTORY_LOCAL_RELEASE_REPO = 'maven-releases'
+    ARTIFACTORY_LOCAL_SNAPSHOT_REPO = 'maven-snapshots'
+    ARTIFACTORY_VIRTUAL_RELEASE_REPO = 'maven-public'
+    ARTIFACTORY_VIRTUAL_SNAPSHOT_REPO = 'maven-snapshots'
+
     MAVEN_TOOL = 'MAVEN_TOOL'
   }
     stages {
