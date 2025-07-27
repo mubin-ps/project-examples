@@ -8,7 +8,7 @@ pipeline {
     ARTIFACTORY_LOCAL_SNAPSHOT_REPO = 'libs-snapshot-local'
     ARTIFACTORY_VIRTUAL_RELEASE_REPO = 'libs-release'
     ARTIFACTORY_VIRTUAL_SNAPSHOT_REPO = 'libs-snapshot'
-
+    MAVEN_TOOL = 'MAVEN_TOOL'
   }
     stages {
         stage ('Clone') {
